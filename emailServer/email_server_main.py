@@ -1,4 +1,4 @@
-# Email server script
+# Email server script 
 # Written by Richard Greenbaum, 6/28/18
 
 from apscheduler.schedulers.blocking import BlockingScheduler
