@@ -18,7 +18,7 @@ def evaluate(board):
 	position for the AI and negative values represent a stronger position for the player. A return value of 9999999
 	denotes a win for the AI. A return value of -9999999 denotes a win for the Player. A return value of -.5 denotes a tie.
 
-	Its long. Its ugly. But I can't think of any better way to evaluate a pentago board. 
+	Its long. Its ugly. But we can't think of any better way to evaluate a pentago board. 
 
 	Parameter board: a valid game board
 	"""
