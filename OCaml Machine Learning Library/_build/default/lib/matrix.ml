@@ -63,6 +63,8 @@ let map f m =
   done;
   m'
 
+(** [map2 f m1 m2] is a map function over two matricies [m1] and [m2] using 
+    function [f], whose type is [('a -> 'b -> 'c)] *)
 let map2 f m1 m2 =
   if (size_equals m1 m2) then
     let m' = zeros ~m:(height m1) ~n:(height m2) in
@@ -73,20 +75,26 @@ let map2 f m1 m2 =
   else
     None
 
+(** [iter f m] iterates over the matrix [m] while applying [f] to each entry *)
 let iter f m =
   for i = 0 to (height m) - 1 do
     Array.iter f m.(i)
   done
 
+(** [return m] unwraps a matrix.t option from [None] or [Some m], into its value
+    [m] if it exists. Raises: Failure if input is [None]. *)
 let return = function
   | None -> failwith "[Matrix.return] couldn't unwrap matrix."
   | Some x -> x
 
+(** [fold_left f init m] folds over the matrix [m] using function [f] and 
+    initial accumulator value [init] *)
 let fold_left f init m = 
   Array.fold_left 
     (fun acc row -> Array.fold_left f acc row) init m
 
-
+(** [to_matrix s] is the matrix of a string array array, whose string entries
+    are floats. This method is used in Parse.ml for parsing a csv file. *)
 let to_matrix s : t = 
   let height = Array.length s and width = Array.length s.(0) in 
   let matrix = zeros ~m:height ~n:width in 
@@ -98,6 +106,8 @@ let to_matrix s : t =
   done;
   matrix
 
+(** [check_dim m] raises failure if the dimensions of the matrix are poor, i.e.
+    being 0 in any dimension. Otherwise it returns the original matrix. *)
 let check_dim m = 
   if height m = 0 || width m = 0 then 
     failwith (
@@ -108,15 +118,21 @@ let check_dim m =
     )
   else m
 
-let sum (m : (float array) array) : float =
-  check_dim m
+(** [sum m] is the sum of all float entries of the matrix [m] *)
+let sum (m : (float array) array) : float = 
+  check_dim m 
   |> fold_left (+.) 0.
 
-
+(** [add m1 m2] is a new matrix whose entries [c_ij] are equal to the sum of 
+    [m1_ij] and [m2_ij]. It is an application of the map function. *)
 let add m1 m2 = map2 (+.) m1 m2
 
+(** [sub m1 m2] is a new matrix whose entries [c_ij] are equal to the difference 
+    of [m1_ij] and [m2_ij]. It is an application of the map function. *)
 let sub m1 m2 = map2 (-.) m1 m2
 
+(** [mult m1 m2] is the matrix multiplication of [m1] and [m2].
+    Raises: Failure "Bad Dimensions" if the dimensions of [m1] and [m2] are not correct *)
 let mult mA mB = 
   if width mA <> height mB then 
     failwith (
@@ -139,6 +155,7 @@ let mult mA mB =
     done;
     mC
 
+(** [dot m1 m2] takes the dot product of matrix [m1] and matrix [m2]. *)
 let dot mA mB =
   map2
     (fun a b -> a *. b)
@@ -147,12 +164,13 @@ let dot mA mB =
   |> return
   |> sum
 
+(** [max_dim a b] is the maximum integer dimension of the two input matrices
+    [a] and [b] *)
 let max_dim mA mB = 
   let (hA, wA, hB, wB) = (height mA, width mA, height mB, width mB) in 
   max wA (max wB (max hA hB))
 
 (**[slice m p1 p2] is a sub-section of [m] between [p1] and [p2] *)
-(* val slice : t -> int * int -> int * int -> t *)
 let slice (x1, y1) (x2, y2) m = 
   let min_x = min x1 x2 in
   let max_x = max x1 x2 in
@@ -166,6 +184,9 @@ let slice (x1, y1) (x2, y2) m =
   done;
   matrix
 
+(** [square m n] takes matrix m and extends its size until its dimensions are 
+    n x n, therefore square. m must be greater than or equal to m. Otherwise the
+    slice function can be used. *)
 let square m n = 
   (* must have n be of larger dimensions and even *)
   if height m = n && width m = n then m else 
@@ -188,7 +209,10 @@ let quad_split m =
     slice (mid' + 1, mid' + 1) (end', end') m
   )
 
-(* expectation is that these are all square matrices *)
+(** [quad_conn q] is a new matrix whose quadrants in order c11, c12, c21, and 
+    c22 correspond to the quadrants provided in matrix * matrix * matrix * matrix
+    tuple [t]. Requires: aij are have the same heights and widths, and are 
+    valid matrices. *)
 let quad_conn (a11, a12, a21, a22) =
   let split_n = height a11 in
   let n = height a11 * 2 in
@@ -216,9 +240,10 @@ let quad_conn (a11, a12, a21, a22) =
   done;
   matrix
 
-let print_dim s m = 
-  Printf.printf "[%s] dim: x, y : %d, %d\n" s (height m) (width m)
-
+(** [strassen a b] performs the strassen multiplication method on the two 
+    matrices [a] and [b]. Requires: [a] and [b] are both square matrices of 
+    equal dimensions, whose dimension [N] is a power of two. Raises: 
+    "Bad Dimensions" if [N] is [0]. *)
 let strassen mA mB = 
   let rec strass n a b = 
     if n = 0 then failwith "[strassen] Bad Dimensions"
@@ -267,15 +292,10 @@ let strassen mA mB =
     )
   in strass (height mA) mA mB
 
-let pad n = 
-  if Num.bin_pow n then n else 
-    let rec help i = 
-      let value = Num.pow 2 i in 
-      if value < n then help (i+1) else value
-    in 
-    help 0
-
-let mult_ mA mB = 
+(** [mult_ a b] is the more efficient multiplication method that uses the 
+    strassen method. Raises: "Bad Dimensions" if the matrices cannot be 
+    multiplied. *)
+let mult_ mA mB : t = 
   if width mA <> height mB then 
     failwith (
       Printf.sprintf 
@@ -285,30 +305,24 @@ let mult_ mA mB =
     )
   else (
     (* convert to square matricies *)
-    let n = pad (max_dim mA mB) in
+    let n = Num.pad (max_dim mA mB) in
     let mA' = square mA n in 
     let mB' = square mB n in 
     strassen mA' mB' 
     |> slice (0, 0) (height mA - 1, width mB - 1))
 
+(** [scalar_mult m s] scales every entry value in the matrix [m] by scalar [s] *)
 let scalar_mult m scale =
   m |> Array.map (fun rows ->
       Array.map (fun v -> v *. scale) rows)
 
-let det m = 
-  if height m <> width m 
-  then failwith (
-      Printf.sprintf 
-        "[det] Bad Matrix Dimensions, A width: %d, B height: %d" 
-        (height m) 
-        (width m)
-    )
-  else 
-    let help = failwith "Need to Implement recursive cofactor expansion"
-    in help
+(** [inv m] is [Some i] if [m] is invertable and [None] otherwise. *)
+let det m = failwith "nyi"
 
+(** [det m] is the determinant of [m]. *)
 let inv _m = failwith "nyi"
 
+(** [norm m] is the norm of [m]. *)
 let norm m =
   Array.fold_left
     (fun sum col ->
@@ -319,6 +333,7 @@ let norm m =
          sum col)
     0. m
 
+(** [transpose m] is the transpose of matrix [m]. *)
 let transpose m =
   let nm = zeros ~m:(width m) ~n:(height m) in
   for i = 0 to (height m) - 1 do
@@ -329,6 +344,7 @@ let transpose m =
   done;
   nm
 
+(** [drop_row m i] removes the [i]th row of [m]. *)
 let drop_row idx m =
   let copy = ones ~m:(height m - 1) ~n:(width m) in
   let rec help i n =
@@ -342,9 +358,11 @@ let drop_row idx m =
   help 0 0;
   copy
 
+(** [drop_col m j] removes the [j]th column of [m]. *)
 let drop_col i m =
   transpose @@ drop_row i (transpose m)
 
+(** [sep m] separates the augmented matrix [a | m] into [(a, m)] *)
 let sep (m : t) =
   let mT = transpose m in
   let output = mT.(height mT - 1) in
@@ -354,15 +372,18 @@ let sep (m : t) =
   done;
   (transpose input_m, transpose [|output|])
 
+(** [of_list l] is a matrix representation of [l]. *)
 let of_list l =
   List.map Array.of_list l
   |> Array.of_list
 
+(** [to_row_list m] is a list of each row in matrix [m]. *)
 let to_row_list m =
   List.map
     (fun x -> transpose [|x|])
     (Array.to_list m)
 
+(** [format fmt t] prints out [t] to [fmt]. *)
 let format fmt m =
   let open Format in
   fprintf fmt "%d x %d\n" (height m) (width m);
@@ -371,10 +392,14 @@ let format fmt m =
       rows |> Array.iter (fun v -> fprintf fmt " %f " v);
       fprintf fmt "]\n";)
 
+(** [format t] prints [t] to [stdout].*)
 let print t = format (Format.std_formatter) t
 
+(** [size m] returns the length of the outer array of matrix m. *)
 let size m = Array.length m
 
+(** [get_first_n m n] returns a touple with the first n elements of matrix m 
+    along with the rest of matrix m  *)
 let get_first_n (m:t) n = 
   let rec helper (m:float array list) acc counter = 
     if counter = 0 then Array.of_list (List.rev acc), Array.of_list m
@@ -385,6 +410,7 @@ let get_first_n (m:t) n =
   in 
   helper (Array.to_list m) [] n
 
+(** [to_flat_list t] returns a representation of matrix t as a flattened list of floats*)
 let to_flat_list m =
   let new_list1 = Array.to_list m in
   let new_list2 = List.map (fun a -> Array.to_list a) new_list1 in

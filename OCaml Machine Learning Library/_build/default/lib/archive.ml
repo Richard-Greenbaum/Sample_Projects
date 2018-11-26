@@ -1,12 +1,15 @@
-
 open Printf
 
 type filename = string
 exception File_not_found of string
 
+(** [file_not_found f] raises the file not found error with a given message
+    specific to file [f]. *)
 let file_not_found fn =
   raise @@ File_not_found (sprintf "Cannot access '%s': No such file or directory." fn)
 
+(** [create ~name files] creates an archive containing all names in [files].
+    Raises [File_not_found] if any of the files does not exist. *)
 let create ~name ?(destructive=true) files =
   (* make sure all files exist *)
   List.iter (fun fn ->
@@ -17,6 +20,7 @@ let create ~name ?(destructive=true) files =
   if destructive then
     List.iter Sys.remove files
 
+(** [read ~name] reads the archive [name] and returns the list of files within it. *)
 let read name ~f =
   let tmp_fn = ".#ocaml_archive_log_tmp" in
   if not (Sys.file_exists name) then file_not_found name;

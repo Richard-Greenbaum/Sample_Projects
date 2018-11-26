@@ -16,25 +16,25 @@ let net =
     (* @.@ PLayer.create_layer ~inputs:10 ~outputs:10 *)
     @.@ PNet.of_layer @@ PLayer.create_layer ~inputs:10 ~outputs:3
 
-(* open Loss.Hinge *)
-(* open Loss.CrossEntropy *)
+(* open! Loss.Hinge
+ * open! Loss.CrossEntropy *)
 open! Loss.SquaredDifference
 
 let _ =
   (* let net = PNet.load "iris.ann" in *)
   let net =
     PNet.train
-      ~epsilon:(0.01)
-      ~learning:(0.5)
+      ~epsilon:(0.1)
+      ~learning:(0.1)
       (* ~max_epoch:(Some 5000) *)
-      ~gradient_type:(MiniBatch 64)
+      ~gradient_type:(MiniBatch 128)
       ~dropout:(0.2)
       ~output_file:(Some "iris_results.csv")
       ~loss
       ~loss_deriv
       net data
   in
-  (* PNet.save net "iris"; *)
+  PNet.save net "iris";
   Printf.printf "accuracy: %f\n"
   @@ PNet.eval_all
     (* ~expand_output:true *)

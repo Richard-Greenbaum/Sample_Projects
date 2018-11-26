@@ -1,1 +1,2 @@
-let hours_worked = [0;0;0;0]
+(* Total hours for all sprints each. *)
+let hours_worked = [20;20;20;20]

@@ -1,1 +1,1 @@
-lib/convolution.pp.mli:
+lib/convolution.pp.mli: Matrix

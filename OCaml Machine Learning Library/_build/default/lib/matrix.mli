@@ -73,10 +73,15 @@ val add : t -> t -> t option
 (** [sub m1 m2] is the matrix subtraction of [m1] and [m2]. *)
 val sub : t -> t -> t option
 
+(** [square m n] converts the matrix [m] into a square matrix with side length 
+    [n], where [n] is greater than the original max_dimension of the matrix 
+    [m] *)
 val square : t -> int -> t
 
+(** [quad_split m] splits the matrix into its four quadrants. *)
 val quad_split : t -> t * t * t * t
 
+(** [quad_conn (q1, q2, q3, q4)] conjoins all quadrants into one larger matrix. *)
 val quad_conn : t * t * t * t -> t
 
 (** [mult m1 m2] is the matrix multiplication of [m1] and [m2].
