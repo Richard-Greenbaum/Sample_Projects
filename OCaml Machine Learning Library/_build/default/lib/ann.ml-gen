@@ -1,0 +1,38 @@
+(** @canonical Ann.Archive *)
+module Archive = Ann__Archive
+
+(** @canonical Ann.Authors *)
+module Authors = Ann__Authors
+
+(** @canonical Ann.Convolution *)
+module Convolution = Ann__Convolution
+
+(** @canonical Ann.Differentiable *)
+module Differentiable = Ann__Differentiable
+
+(** @canonical Ann.Fstream *)
+module Fstream = Ann__Fstream
+
+(** @canonical Ann.Layer *)
+module Layer = Ann__Layer
+
+(** @canonical Ann.Loss *)
+module Loss = Ann__Loss
+
+(** @canonical Ann.Matrix *)
+module Matrix = Ann__Matrix
+
+(** @canonical Ann.Network *)
+module Network = Ann__Network
+
+(** @canonical Ann.Num *)
+module Num = Ann__Num
+
+(** @canonical Ann.Parse *)
+module Parse = Ann__Parse
+
+(** @canonical Ann.Perceptron *)
+module Perceptron = Ann__Perceptron
+
+(** @canonical Ann.Perceptron_biases *)
+module Perceptron_biases = Ann__Perceptron_biases

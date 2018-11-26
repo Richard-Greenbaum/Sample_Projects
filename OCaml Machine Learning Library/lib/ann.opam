@@ -1,0 +1,6 @@
+opam-version: "1.2.2"
+maintainer: "sgt43@cornell.edu"
+authors: ["Arjun Bhalla" "Akhil Bhandaru" "Richard Greenbaum" "Samuel Thomas"]
+build: [
+  "dune" "build" "-p" ann
+]

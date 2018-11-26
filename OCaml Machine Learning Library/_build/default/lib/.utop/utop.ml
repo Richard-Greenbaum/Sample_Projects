@@ -1,0 +1,25 @@
+Clflags.include_dirs :=
+  [ "/Users/richardgreenbaum/.opam/4.06.1/lib/bisect_ppx/runtime"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/bytes"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/camomile"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/camomile/default_config"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/camomile/dyn"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/camomile/lib_default"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/camomile/library"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/findlib"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/lambda-term"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/lwt"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/lwt/unix"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/lwt_log"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/lwt_log/core"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/lwt_react"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/ocaml/compiler-libs"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/ocaml/threads"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/react"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/result"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/utop"
+  ; "/Users/richardgreenbaum/.opam/4.06.1/lib/zed"
+  ; "/Users/richardgreenbaum/Desktop/A6ANN/_build/default/lib/.ann.objs"
+  ];
+
+UTop_main.main ();

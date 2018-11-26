@@ -1,0 +1,13 @@
+B /Users/richardgreenbaum/.opam/4.06.1/lib/bisect_ppx/runtime
+B /Users/richardgreenbaum/.opam/4.06.1/lib/bytes
+B /Users/richardgreenbaum/.opam/4.06.1/lib/oUnit
+B /Users/richardgreenbaum/.opam/4.06.1/lib/ocaml
+B ../_build/default/lib/.ann.objs
+B ../_build/default/tests/.matrix.eobjs
+S /Users/richardgreenbaum/.opam/4.06.1/lib/bisect_ppx/runtime
+S /Users/richardgreenbaum/.opam/4.06.1/lib/bytes
+S /Users/richardgreenbaum/.opam/4.06.1/lib/oUnit
+S /Users/richardgreenbaum/.opam/4.06.1/lib/ocaml
+S ../lib
+S .
+FLG -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs
