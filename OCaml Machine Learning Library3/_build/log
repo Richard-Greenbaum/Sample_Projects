@@ -1,4 +1,0 @@
-# dune exec examples/iris/main.exe
-# OCAMLPARAM: unset
-$ /usr/bin/getconf _NPROCESSORS_ONLN > /var/folders/pc/4bygpyj13kg83g6p3gngx62w0000gn/T/dune6ed946.output 2> /dev/null
-$ /Users/richardgreenbaum/.opam/4.06.1/bin/ocamlc.opt -config > /var/folders/pc/4bygpyj13kg83g6p3gngx62w0000gn/T/dune54dba8.output
