@@ -1,0 +1,390 @@
+<html>
+  <head>
+    <title>Coverage report</title>
+    <link rel="stylesheet" href="../coverage.css" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div id="header">
+      <h1>
+        <a href="../index.html">
+          <span class="dirname">lib/</span>matrix.ml
+        </a>
+      </h1>
+      <h2>53.23%</h2>
+    </div>
+    <div id="navbar">
+      <span class="unvisited" style="top:9.91%"></span>
+      <span class="unvisited" style="top:10.81%"></span>
+      <span class="unvisited" style="top:14.41%"></span>
+      <span class="unvisited" style="top:21.62%"></span>
+      <span class="unvisited" style="top:23.42%"></span>
+      <span class="unvisited" style="top:36.04%"></span>
+      <span class="unvisited" style="top:45.05%"></span>
+      <span class="some-visited" style="top:48.65%"></span>
+      <span class="unvisited" style="top:60.36%"></span>
+      <span class="unvisited" style="top:63.06%"></span>
+      <span class="unvisited" style="top:78.38%"></span>
+      <span class="unvisited" style="top:80.18%"></span>
+      <span class="unvisited" style="top:81.98%"></span>
+      <span class="unvisited" style="top:84.68%"></span>
+      <span class="unvisited" style="top:85.59%"></span>
+      <span class="unvisited" style="top:86.49%"></span>
+      <span class="unvisited" style="top:87.39%"></span>
+      <span class="unvisited" style="top:88.29%"></span>
+      <span class="unvisited" style="top:90.99%"></span>
+      <span class="unvisited" style="top:93.69%"></span>
+      <span class="unvisited" style="top:94.59%"></span>
+      <span class="unvisited" style="top:95.50%"></span>
+      <span class="unvisited" style="top:96.40%"></span>
+      <span class="unvisited" style="top:97.30%"></span>
+    </div>
+    <div id="report">
+      <div id="lines-layer">
+        <pre>
+<a id="L1"></a><span > </span>
+<a id="L2"></a><span > </span>
+<a id="L3"></a><span > </span>
+<a id="L4"></a><span class="visited"> </span>
+<a id="L5"></a><span > </span>
+<a id="L6"></a><span class="visited"> </span>
+<a id="L7"></a><span > </span>
+<a id="L8"></a><span class="visited"> </span>
+<a id="L9"></a><span > </span>
+<a id="L10"></a><span > </span>
+<a id="L11"></a><span class="unvisited"> </span>
+<a id="L12"></a><span class="unvisited"> </span>
+<a id="L13"></a><span > </span>
+<a id="L14"></a><span > </span>
+<a id="L15"></a><span class="visited"> </span>
+<a id="L16"></a><span class="unvisited"> </span>
+<a id="L17"></a><span > </span>
+<a id="L18"></a><span class="visited"> </span>
+<a id="L19"></a><span class="visited"> </span>
+<a id="L20"></a><span > </span>
+<a id="L21"></a><span > </span>
+<a id="L22"></a><span class="visited"> </span>
+<a id="L23"></a><span > </span>
+<a id="L24"></a><span class="unvisited"> </span>
+<a id="L25"></a><span > </span>
+<a id="L26"></a><span class="unvisited"> </span>
+<a id="L27"></a><span > </span>
+<a id="L28"></a><span > </span>
+<a id="L29"></a><span > </span>
+<a id="L30"></a><span > </span>
+<a id="L31"></a><span > </span>
+<a id="L32"></a><span > </span>
+<a id="L33"></a><span class="visited"> </span>
+<a id="L34"></a><span class="visited"> </span>
+<a id="L35"></a><span class="visited"> </span>
+<a id="L36"></a><span class="visited"> </span>
+<a id="L37"></a><span > </span>
+<a id="L38"></a><span class="visited"> </span>
+<a id="L39"></a><span > </span>
+<a id="L40"></a><span class="unvisited"> </span>
+<a id="L41"></a><span > </span>
+<a id="L42"></a><span > </span>
+<a id="L43"></a><span class="visited"> </span>
+<a id="L44"></a><span class="visited"> </span>
+<a id="L45"></a><span class="visited"> </span>
+<a id="L46"></a><span class="visited"> </span>
+<a id="L47"></a><span > </span>
+<a id="L48"></a><span class="visited"> </span>
+<a id="L49"></a><span > </span>
+<a id="L50"></a><span class="unvisited"> </span>
+<a id="L51"></a><span > </span>
+<a id="L52"></a><span > </span>
+<a id="L53"></a><span > </span>
+<a id="L54"></a><span class="some-visited"> </span>
+<a id="L55"></a><span > </span>
+<a id="L56"></a><span class="visited"> </span>
+<a id="L57"></a><span class="visited"> </span>
+<a id="L58"></a><span class="visited"> </span>
+<a id="L59"></a><span class="visited"> </span>
+<a id="L60"></a><span class="visited"> </span>
+<a id="L61"></a><span > </span>
+<a id="L62"></a><span > </span>
+<a id="L63"></a><span > </span>
+<a id="L64"></a><span class="visited"> </span>
+<a id="L65"></a><span > </span>
+<a id="L66"></a><span > </span>
+<a id="L67"></a><span class="unvisited"> </span>
+<a id="L68"></a><span > </span>
+<a id="L69"></a><span > </span>
+<a id="L70"></a><span class="unvisited"> </span>
+<a id="L71"></a><span > </span>
+<a id="L72"></a><span > </span>
+<a id="L73"></a><span > </span>
+<a id="L74"></a><span > </span>
+<a id="L75"></a><span > </span>
+<a id="L76"></a><span > </span>
+<a id="L77"></a><span > </span>
+<a id="L78"></a><span > </span>
+<a id="L79"></a><span > </span>
+<a id="L80"></a><span > </span>
+<a id="L81"></a><span > </span>
+<a id="L82"></a><span > </span>
+<a id="L83"></a><span > </span>
+<a id="L84"></a><span class="visited"> </span>
+<a id="L85"></a><span class="visited"> </span>
+<a id="L86"></a><span > </span>
+<a id="L87"></a><span class="unvisited"> </span>
+<a id="L88"></a><span > </span>
+<a id="L89"></a><span class="unvisited"> </span>
+<a id="L90"></a><span > </span>
+<a id="L91"></a><span class="unvisited"> </span>
+<a id="L92"></a><span > </span>
+<a id="L93"></a><span > </span>
+<a id="L94"></a><span class="unvisited"> </span>
+<a id="L95"></a><span class="unvisited"> </span>
+<a id="L96"></a><span class="unvisited"> </span>
+<a id="L97"></a><span class="unvisited"> </span>
+<a id="L98"></a><span class="unvisited"> </span>
+<a id="L99"></a><span > </span>
+<a id="L100"></a><span > </span>
+<a id="L101"></a><span class="unvisited"> </span>
+<a id="L102"></a><span > </span>
+<a id="L103"></a><span > </span>
+<a id="L104"></a><span class="unvisited"> </span>
+<a id="L105"></a><span class="unvisited"> </span>
+<a id="L106"></a><span class="unvisited"> </span>
+<a id="L107"></a><span class="unvisited"> </span>
+<a id="L108"></a><span class="unvisited"> </span>
+<a id="L109"></a><span > </span>
+<a id="L110"></a><span > </span>
+<a id="L111"></a><span > </span>
+</pre>
+      </div>
+      <div id="text-layer">
+        <pre id="line-numbers">
+<a href="#L1">  1</a>
+<a href="#L2">  2</a>
+<a href="#L3">  3</a>
+<a href="#L4">  4</a>
+<a href="#L5">  5</a>
+<a href="#L6">  6</a>
+<a href="#L7">  7</a>
+<a href="#L8">  8</a>
+<a href="#L9">  9</a>
+<a href="#L10"> 10</a>
+<a href="#L11"> 11</a>
+<a href="#L12"> 12</a>
+<a href="#L13"> 13</a>
+<a href="#L14"> 14</a>
+<a href="#L15"> 15</a>
+<a href="#L16"> 16</a>
+<a href="#L17"> 17</a>
+<a href="#L18"> 18</a>
+<a href="#L19"> 19</a>
+<a href="#L20"> 20</a>
+<a href="#L21"> 21</a>
+<a href="#L22"> 22</a>
+<a href="#L23"> 23</a>
+<a href="#L24"> 24</a>
+<a href="#L25"> 25</a>
+<a href="#L26"> 26</a>
+<a href="#L27"> 27</a>
+<a href="#L28"> 28</a>
+<a href="#L29"> 29</a>
+<a href="#L30"> 30</a>
+<a href="#L31"> 31</a>
+<a href="#L32"> 32</a>
+<a href="#L33"> 33</a>
+<a href="#L34"> 34</a>
+<a href="#L35"> 35</a>
+<a href="#L36"> 36</a>
+<a href="#L37"> 37</a>
+<a href="#L38"> 38</a>
+<a href="#L39"> 39</a>
+<a href="#L40"> 40</a>
+<a href="#L41"> 41</a>
+<a href="#L42"> 42</a>
+<a href="#L43"> 43</a>
+<a href="#L44"> 44</a>
+<a href="#L45"> 45</a>
+<a href="#L46"> 46</a>
+<a href="#L47"> 47</a>
+<a href="#L48"> 48</a>
+<a href="#L49"> 49</a>
+<a href="#L50"> 50</a>
+<a href="#L51"> 51</a>
+<a href="#L52"> 52</a>
+<a href="#L53"> 53</a>
+<a href="#L54"> 54</a>
+<a href="#L55"> 55</a>
+<a href="#L56"> 56</a>
+<a href="#L57"> 57</a>
+<a href="#L58"> 58</a>
+<a href="#L59"> 59</a>
+<a href="#L60"> 60</a>
+<a href="#L61"> 61</a>
+<a href="#L62"> 62</a>
+<a href="#L63"> 63</a>
+<a href="#L64"> 64</a>
+<a href="#L65"> 65</a>
+<a href="#L66"> 66</a>
+<a href="#L67"> 67</a>
+<a href="#L68"> 68</a>
+<a href="#L69"> 69</a>
+<a href="#L70"> 70</a>
+<a href="#L71"> 71</a>
+<a href="#L72"> 72</a>
+<a href="#L73"> 73</a>
+<a href="#L74"> 74</a>
+<a href="#L75"> 75</a>
+<a href="#L76"> 76</a>
+<a href="#L77"> 77</a>
+<a href="#L78"> 78</a>
+<a href="#L79"> 79</a>
+<a href="#L80"> 80</a>
+<a href="#L81"> 81</a>
+<a href="#L82"> 82</a>
+<a href="#L83"> 83</a>
+<a href="#L84"> 84</a>
+<a href="#L85"> 85</a>
+<a href="#L86"> 86</a>
+<a href="#L87"> 87</a>
+<a href="#L88"> 88</a>
+<a href="#L89"> 89</a>
+<a href="#L90"> 90</a>
+<a href="#L91"> 91</a>
+<a href="#L92"> 92</a>
+<a href="#L93"> 93</a>
+<a href="#L94"> 94</a>
+<a href="#L95"> 95</a>
+<a href="#L96"> 96</a>
+<a href="#L97"> 97</a>
+<a href="#L98"> 98</a>
+<a href="#L99"> 99</a>
+<a href="#L100">100</a>
+<a href="#L101">101</a>
+<a href="#L102">102</a>
+<a href="#L103">103</a>
+<a href="#L104">104</a>
+<a href="#L105">105</a>
+<a href="#L106">106</a>
+<a href="#L107">107</a>
+<a href="#L108">108</a>
+<a href="#L109">109</a>
+<a href="#L110">110</a>
+<a href="#L111">111</a>
+</pre>
+        <pre id="code">
+
+type t = (float array) array
+
+let zeros ~m ~n = <span data-count="9">A</span>rray.make_matrix m n 0.0
+
+let ones ~m ~n = <span data-count="9">A</span>rray.make_matrix m n 1.0
+
+let mat_values ~m ~n ~v = <span data-count="8">A</span>rray.make_matrix m n v
+
+let random ~m ~n =
+  <span data-count="0">o</span>nes ~m ~n |&gt; <span data-count="0">A</span>rray.map (fun rows -&gt;
+      <span data-count="0">A</span>rray.map (fun _v -&gt; <span data-count="0">R</span>andom.float 1.0) rows)
+
+let set m v ~i ~j =
+  <span data-count="1">t</span>ry m.(i).(j) &lt;- v; <span data-count="1">S</span>ome m with
+  | <span data-count="0">I</span>nvalid_argument _ -&gt; None
+
+let height m = <span data-count="15">A</span>rray.length m
+let width m = <span data-count="14">A</span>rray.length m.(0)
+
+let size_equals m1 m2 =
+  <span data-count="6">(</span>width m1 = width m2) &amp;&amp; <span data-count="3">(</span>height m1 = height m2)
+
+let equals _m1 _m2 = <span data-count="0">f</span>ailwith "nyi"
+
+let sum _m1 = <span data-count="0">f</span>ailwith "nyi"
+(* let rec help acc = function
+   | [| |] -&gt; acc
+   | [|r; rs|] -&gt; help (acc + (Array.fold_left (fun acc x -&gt; x + acc) 0.0 r)) rs
+   | _ -&gt; failwith "what" *)
+
+let add m1 m2 =
+  <span data-count="1">i</span>f (size_equals m1 m2) then
+    <span data-count="1">l</span>et mat = <span data-count="1">z</span>eros ~m:(height m1) ~n:(width m1) in
+    <span data-count="1">f</span>or i = 0 to (height mat) - 1 do
+      <span data-count="10">m</span>at.(i) &lt;- Array.map2 (+.) m1.(i) m2.(i)
+    done;
+    <span data-count="1">S</span>ome mat
+  else
+    <span data-count="0">N</span>one
+
+let sub m1 m2 =
+  <span data-count="1">i</span>f (size_equals m1 m2) then
+    <span data-count="1">l</span>et m = <span data-count="1">z</span>eros ~m:(height m1) ~n:(width m1) in
+    <span data-count="1">f</span>or i=0 to (height m) - 1 do
+      <span data-count="10">m</span>.(i) &lt;- Array.map2 (-.) m1.(i) m2.(i)
+    done;
+    <span data-count="1">S</span>ome m
+  else
+    <span data-count="0">N</span>one
+
+let mult m1 m2 = 
+  (* Naive implementation, will improve later*)
+  <span data-count="1">i</span>f height m2 &lt;&gt; width m1 then <span data-count="0">f</span>ailwith "Bad dimensions" else
+
+    <span data-count="1">l</span>et m = <span data-count="1">z</span>eros ~m:(height m1) ~n:(width m2) in
+    <span data-count="1">f</span>or i = 0 to (height m) - 1 do 
+      <span data-count="1">f</span>or j = 0 to (width m) - 1 do
+        <span data-count="1">f</span>or k = 0 to (width m1) - 1 do
+          <span data-count="2">(</span>m.(i).(j) &lt;- m.(i).(j) +. (m1.(i).(k) *. m2.(k).(j)));
+        done
+      done
+    done;
+    <span data-count="1">m</span>
+
+
+let map _m _f = <span data-count="0">f</span>ailwith "nyi"
+(* let map m f = Array.map f m *)
+
+let slice _m _p1 _p2 = <span data-count="0">f</span>ailwith "nyi" 
+(* let st_wd = if snd p1 &lt; snd p2 then snd p1 else snd p2 in
+   let st_ht = if fst p1 &lt; fst p2 then fst p1 else fst p2 in
+   let en_wd = if st_wd = snd p1 then snd p2 else snd p1 in
+   let en_ht = if st_ht = fst p1 then fst p2 else fst p1 in 
+   let ln = en_wd - st_wd + 1 in
+
+   let rec help = function
+   | en_ht -&gt; Array.make 0 0
+   | n -&gt; Array.append (help (n + 1)) (Array.sub (Array.sub m n 1) st_wd ln) in
+
+   help (st_ht) *)
+
+let scalar_mult m scale =
+  <span data-count="1">m</span> |&gt; <span data-count="1">A</span>rray.map (fun rows -&gt;
+      <span data-count="4">A</span>rray.map (fun v -&gt; <span data-count="16">v</span> *. scale) rows)
+
+let inv _m = <span data-count="0">f</span>ailwith "nyi"
+
+let det _m = <span data-count="0">f</span>ailwith "nyi"
+
+let norm _m = <span data-count="0">f</span>ailwith "nyi"
+
+let transpose m = 
+  <span data-count="0">l</span>et nm = <span data-count="0">z</span>eros ~m: (width m) ~n: (height m) in
+  <span data-count="0">f</span>or i = 0 to (height m) - 1 do 
+    <span data-count="0">f</span>or j = i to (width m) - 1 do 
+      <span data-count="0">n</span>m.(i).(j) &lt;- m.(j).(i);
+      <span data-count="0">n</span>m.(j).(i) &lt;- m.(i).(j);
+    done
+  done;
+  <span data-count="0">n</span>m
+
+let format fmt m =
+  <span data-count="0">l</span>et open Format in
+  m |&gt; <span data-count="0">A</span>rray.iter (fun rows -&gt;
+      <span data-count="0">f</span>printf fmt "[";
+      <span data-count="0">r</span>ows |&gt; <span data-count="0">A</span>rray.iter (fun v -&gt; <span data-count="0">f</span>printf fmt " %f " v);
+      <span data-count="0">f</span>printf fmt "]\n";)
+
+
+
+</pre>
+      </div>
+    </div>
+    <div id="footer">Generated on 2018-10-20 14:50:29 by <a href="https://github.com/aantron/bisect_ppx">Bisect_ppx</a> 1.3.4</div>
+    <script src="../coverage.js"></script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+# feature1,feature2,out // leave these out
+               # type=classification labels=2
+0,0,0
+0,1,0
+1,0,0
+1,1,1

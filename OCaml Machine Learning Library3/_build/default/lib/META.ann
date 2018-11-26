@@ -1,0 +1,6 @@
+description = ""
+requires = "bisect_ppx.runtime str unix"
+archive(byte) = "ann.cma"
+archive(native) = "ann.cmxa"
+plugin(byte) = "ann.cma"
+plugin(native) = "ann.cmxs"
