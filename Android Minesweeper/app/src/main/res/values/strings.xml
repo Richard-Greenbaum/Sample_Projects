@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MineSweeper</string>
+    <string name="winTest">Congratulations! You Won!</string>
+    <string name="steppedOnMineText">You stepped on a mine!</string>
+    <string name="winText">Congratulations! You Won!</string>
+    <string name="flaggedIncorrectBlockText">You flagged an incorrect block!</string>
+    <string name="minesRemainingText">Mines Remaining:</string>
+    <string name="toggleTextOff">Explore</string>
+    <string name="toggleTextOn">Flag</string>
+    <string name="minesRemainingInit">Mines Remaining: 4</string>
+
+</resources>
