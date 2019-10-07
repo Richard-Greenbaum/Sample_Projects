@@ -10,6 +10,7 @@ def minimax(board, depth, bestaction):
     if ((eval==-9999999) or (eval==9999999) or (eval==-0.5) or (depth==0)):
         return eval
     else:
+        hashes_seen = set()
         val = evaluate.MINVAL
         for x in range(0,6):
             for y in range(0,6):
@@ -18,13 +19,16 @@ def minimax(board, depth, bestaction):
                         for dir in ["R", "L"]:
                             a = GamePlay.Action(x,y,box,dir)
                             temp = deepcopy(board)
-                            val2 = maximin(GamePlay.take_action(temp, a, "AI"), depth-1, bestaction)
-                            if (val2>val):
-                                val=val2
-                                bestaction.x_coordinate=x
-                                bestaction.y_coordinate = y
-                                bestaction.square_index=box
-                                bestaction.direction=dir
+                            new_board = GamePlay.take_action(temp, a, "AI")
+                            if isUnique(symmetricBoards(new_board), hashes_seen):
+                                hashes_seen.add(hash(str(new_board)))
+                                val2 = maximin(new_board, depth-1, bestaction)
+                                if (val2>val):
+                                    val=val2
+                                    bestaction.x_coordinate=x
+                                    bestaction.y_coordinate = y
+                                    bestaction.square_index=box
+                                    bestaction.direction=dir
         return val
 
 
@@ -35,6 +39,7 @@ def maximin(board, depth, bestaction):
     if ((eval == -9999999) or (eval == 9999999) or (eval == -0.5) or (depth == 0)):
         return eval
     else:
+        hashes_seen = set()
         val = evaluate.MAXVAL
         for x in range(0, 6):
             for y in range(0, 6):
@@ -43,10 +48,13 @@ def maximin(board, depth, bestaction):
                         for dir in ["R", "L"]:
                             a = GamePlay.Action(x, y, box, dir)
                             temp = deepcopy(board)
-                            val2 = minimax(GamePlay.take_action(temp, a, "Player"), depth - 1, bestaction)
-                            if (val2 < val):
-                                val = val2
-        return val
+                            new_board = GamePlay.take_action(temp, a, "AI")
+                            if isUnique(symmetricBoards(new_board), hashes_seen):
+                                hashes_seen.add(hash(str(new_board)))
+                                val2 = minimax(GamePlay.take_action(temp, a, "Player"), depth - 1, bestaction)
+                                if (val2 < val):
+                                    val = val2
+            return val
 
 
 def getBestAction(board, depth):
@@ -71,6 +79,24 @@ def findAvailableAction(board):
         for y in range(0,6):
             if isAvailable(board, x, y):
                 return GamePlay.Action(x, y, 1, "L")
+
+def rotate_clockwise(matrix, degree=90):
+    matrix = deepcopy(matrix)
+    return matrix if not degree else rotate_clockwise(list(zip(*matrix[::-1])), degree-90)
+
+def symmetricBoards(board):
+    output = [board]
+    for degree in [90, 180, 270]:
+        output.append(rotate_clockwise(board, degree))
+    return output
+
+def isUnique(symmetries, set):
+    for board in symmetries:
+        if hash(str(board)) in set:
+            return False
+    return True
+
+
 
 
                 
