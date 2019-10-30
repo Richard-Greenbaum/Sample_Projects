@@ -1,6 +1,7 @@
 import evaluate
 import GamePlay
 from copy import copy, deepcopy
+import numpy as np
 
 
 bestaction = None
@@ -80,14 +81,25 @@ def findAvailableAction(board):
             if isAvailable(board, x, y):
                 return GamePlay.Action(x, y, 1, "L")
 
-def rotate_clockwise(matrix, degree=90):
-    matrix = deepcopy(matrix)
-    return matrix if not degree else rotate_clockwise(list(zip(*matrix[::-1])), degree-90)
 
 def symmetricBoards(board):
     output = [board]
-    for degree in [90, 180, 270]:
-        output.append(rotate_clockwise(board, degree))
+
+    #rotations
+    mid_board = np.array(board)
+    for i in range(3):
+        mid_board = np.rot90(mid_board)
+        output.append(mid_board.tolist())
+
+    #horizontal and vertical flips
+    mid_board = np.array(board)
+    output.append(np.flip(mid_board, axis=0).tolist())
+    output.append(np.flip(mid_board, axis=1).tolist())
+
+    #flips across the two diagonals. Commented out because they slow the program down
+    # output.append(np.flip(np.rot90(mid_board), axis=0).tolist())
+    # output.append(np.flip(np.rot90(mid_board), axis=1).tolist())
+
     return output
 
 def isUnique(symmetries, set):
