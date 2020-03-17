@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Crypto Keychain</string>
+
+    <!-- Navigation Resources -->
+    <string name="title_accounts">Accounts</string>
+    <string name="title_settings">Settings</string>
+
+    <!-- Accounts Page Resources -->
+    <string name="accounts_header">Accounts</string>
+    <string name="new_account_header">Add Password</string>
+    <string name="account_header">Password</string>
+    <string name="website">example.com</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+
+    <!-- Settings Page Resources -->
+    <string name="reset_app">Reset App</string>
+
+</resources>

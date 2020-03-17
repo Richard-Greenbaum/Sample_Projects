@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/AccountsFragment">
+
+    <fragment
+            android:id="@+id/AccountsFragment"
+            android:name="hu.ait.cryptokeychain.AccountsFragment"
+            android:label="accounts_fragment"
+            tools:layout="@layout/accounts_fragment"/>
+    <fragment
+            android:id="@+id/SettingsFragment"
+            android:name="hu.ait.cryptokeychain.SettingsFragment"
+            android:label="settings_fragment"
+            tools:layout="@layout/settings_fragment"/>
+    <fragment
+            android:id="@+id/PasswordInfoFragment"
+            android:name="hu.ait.cryptokeychain.PasswordInfoFragment"
+            android:label="password_info_fragment"
+            tools:layout="@layout/password_info_fragment"/>
+    <fragment
+            android:id="@+id/CreateAccountFragment"
+            android:name="hu.ait.cryptokeychain.CreateAccountFragment"
+            android:label="create_account_fragment"
+            tools:layout="@layout/create_account_fragment"/>
+</navigation>

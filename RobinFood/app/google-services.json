@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "70476223740",
+    "firebase_url": "https://robinfood-de4c2.firebaseio.com",
+    "project_id": "robinfood-de4c2",
+    "storage_bucket": "robinfood-de4c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70476223740:android:6853ea0832587eb7",
+        "android_client_info": {
+          "package_name": "hu.ait.robinfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "70476223740-krntab24l9hr2098t007nff15ck84pgi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hu.ait.robinfood",
+            "certificate_hash": "25e2a064b867fe7f8ac9ea0141c771acc84cb144"
+          }
+        },
+        {
+          "client_id": "70476223740-1rnssgqb3r5vlel98gfb04d30muj5pgq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXWkjUq0KtS6eALwhNeuBUz_h6hPXjZEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "70476223740-1rnssgqb3r5vlel98gfb04d30muj5pgq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

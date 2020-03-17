@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_edit"
+        android:title="Edit Account"
+        app:showAsAction="withText|always"/>
+
+    <item
+        android:id="@+id/action_edit_done"
+        android:title="Save Changes"
+        app:showAsAction="withText|always"
+        android:visible="false"/>
+
+    <item
+        android:id="@+id/action_edit_cancel"
+        android:title="Cancel"
+        app:showAsAction="withText|always"
+        android:visible="false"/>
+
+</menu>

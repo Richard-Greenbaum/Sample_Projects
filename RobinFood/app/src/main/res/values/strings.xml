@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">RobinFood</string>
+    <string name="restaurant">restaurant</string>
+    <string name="food_pantry">food pantry</string>
+    <string name="login">Log In</string>
+    <string name="register">Register</string>
+    <string name="password_hint">Password</string>
+    <string name="email_hint">Email</string>
+    <string name="orgs_type_representing">I am representing a:</string>
+    <string name="login_success">Login Successful</string>
+    <string name="login_failed">Login Failed: %1$s</string>
+    <string name="register_success">Account Registration Success</string>
+    <string name="register_failed">Account Registration Failed: %1$s</string>
+    <string name="row_description_tv">Goods %1$s: %2$s</string>
+
+    <string name="btn_email">Send an Email</string>
+    <string name="btn_website">Visit Website</string>
+    <string name="btn_upload_photo">Upload a Profile Photo</string>
+    <string name="btn_update_photo">Update Photo</string>
+    <string name="btn_delete_photo">Delete Photo</string>
+    <string name="upload_failed">Failed to Upload Photo</string>
+    <string name="delete_failed">Failed to Delete Photo</string>
+
+    <string name="details_activity_header">Please provide some details for your %1$s</string>
+    <string name="details_activity_name">Name of your %1$s</string>
+    <string name="details_activity_contact_name">Contact Name (First and Last)</string>
+    <string name="details_activity_address">Address of %1$s</string>
+    <string name="details_activity_website">Website Link (optional)</string>
+    <string name="details_activity_sd_text">List of goods %1$s:</string>
+    <string name="details_activity_ld_text">Additional Information:</string>
+    <string name="details_activity_sd_hint">Canned goods, vegetables, bread&#8230;</string>
+    <string name="details_activity_visible">Make Profile Visible</string>
+    <string name="details_activity_finished">Finished</string>
+    <string name="edit_details_activity_header">Update Your Details Below</string>
+
+    <string name="dialog_profile_details_title">Organization Details</string>
+    <string name="dialog_close">Done</string>
+
+    <string name="tag_dialog">TAG_DIALOG</string>
+    <string name="empty_field_error">This field cannot be empty</string>
+    <string name="profile_creation_success">Organization Details Added</string>
+    <string name="profile_creation_fail">Failed to Add Organization Details : %1$s</string>
+    <string name="profile_update_success">Organization Details Updated</string>
+    <string name="profile_update_fail">Failed to Update Details: %1$s</string>
+    <string name="edit_profile_title">Edit any details below</string>
+    <string name="email_uri">mailto: %1$s?&amp;subject=Everybody Eats: Request to Connect</string>
+    <string name="email_failed_msg">No email application available on device</string>
+    <string name="header_text_foodpantry">Food Pantries to Connect With</string>
+    <string name="header_text_restaurant">Restaurants to Connect With</string>
+</resources>
